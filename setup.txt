@@ -2,6 +2,7 @@ this is how we envision our project to look like, may change in future
 
 
 AegiScan_test/
+│── asenv/                      ------------> will not be visible in git as virtual env will be in the .gitignore (here for reference only)
 │── src/
 │   ├── detection/
 │   │   ├── buffer_overflow_detection.py
@@ -23,5 +24,7 @@ AegiScan_test/
 │   ├── test_buffer_overflow.py
 │   ├── test_cache_poisoning.py
 │   ├── test_trapdoor.py
+│── pytest.ini
 │── requirements.txt
 │── README.md
+│── setup.txt
