@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pymongo
+psutil
+streamlit
+requests
+numpy
+pandas
+pytest

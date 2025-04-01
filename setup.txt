@@ -1,0 +1,27 @@
+this is how we envision our project to look like, may change in future
+
+
+AegiScan_test/
+│── src/
+│   ├── detection/
+│   │   ├── buffer_overflow_detection.py
+│   │   ├── cache_poisoning_detection.py
+│   │   ├── trapdoor_detection.py
+│   │   ├── __init__.py
+│   ├── mitigation/
+│   │   ├── buffer_overflow_mitigation.py
+│   │   ├── cache_poisoning_mitigation.py
+│   │   ├── trapdoor_mitigation.py
+│   │   ├── __init__.py
+│   ├── core/
+│   │   ├── logger.py
+│   │   ├── utils.py
+│   │   ├── config.py
+│   │   ├── __init__.py
+│   ├── main.py
+│── tests/
+│   ├── test_buffer_overflow.py
+│   ├── test_cache_poisoning.py
+│   ├── test_trapdoor.py
+│── requirements.txt
+│── README.md
