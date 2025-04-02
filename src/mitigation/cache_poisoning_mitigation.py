@@ -27,6 +27,6 @@ def kill_process(pid: int) -> dict:
 
 if __name__ == "__main__":
     # For testing purposes only.
-    pid_example = 1234                                                  # Replace with an actual PID during testing.
+    pid_example = 1234                                           # Replace with an actual PID during testing.
     result = kill_process(pid_example)
     print(result)
