@@ -5,10 +5,10 @@ Its going to gombine detection and mitigation modules.
 
 
 from src.detection.cache_poisoning_detection import CachePoisoningDetector
-
+from src.detection.trapdoor_detection import TrapdoorDetector
 
 from src.mitigation.cache_poisoning_mitigation import CachePoisoningMitigation
-
+from src.mitigation.trapdoor_mitigation import TrapdoorMitigation
 
 
 from src.core.logger import log
@@ -25,6 +25,13 @@ def run_detection():
         mitigation = CachePoisoningMitigation(dummy_cache)
         log.info(mitigation.purge_cache("https://example.com"))
 
+
+    # Run trapdoor detection on a sample file
+    trapdoor_detector = TrapdoorDetector()
+    sample_file = "suspected_binary.exe"  # Update with a real file for actual testing
+    if trapdoor_detector.scan_file(sample_file):
+        trapdoor_mitigation = TrapdoorMitigation()
+        log.info(trapdoor_mitigation.quarantine_file(sample_file))
 
 
 
