@@ -1,3 +1,8 @@
+"""
+Module: buffer_overflow_detection
+Purpose: Monitor process memory usage to detect potential buffer overflow vulnerabilities.
+"""
+
 import psutil
 from datetime import datetime
 from src.core.logger import log
@@ -6,6 +11,9 @@ from src.core.config import BUFFER_OVERFLOW_THRESHOLD
 
 
 def monitor_memory(threshold: float = BUFFER_OVERFLOW_THRESHOLD):
+    """
+    Monitors running processes and logs those exceeding the memory threshold.
+    """
     for proc in psutil.process_iter(['pid', 'name', 'memory_percent']):
         try:
             mem_percent = proc.info.get('memory_percent', 0)

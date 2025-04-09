@@ -1,16 +1,27 @@
+"""
+Module: cache_poisoning_detection
+Purpose: Detect possible cache poisoning by comparing cached content with live responses.
+"""
+
 import hashlib
 import requests
 from src.core.logger import log
+
 
 class CachePoisoningDetector:
     def __init__(self, cache_storage: dict):
         self.cache = cache_storage
 
     def detect_poisoning(self, url: str) -> bool:
+        """
+        Compares cached content with the current live response.
+        Returns True if content mismatch (i.e., potential poisoning) is detected.
+        """
         cached_response = self.cache.get(url)
         if not cached_response:
             log.info(f"No cached response for {url}.")
             return False
+
         try:
             actual_response = requests.get(url, timeout=5).text
         except requests.RequestException as e:
