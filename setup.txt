@@ -1,8 +1,15 @@
-this is how we envision our project to look like, may change in future
+this is how we envision our project to look like, subject to change in future
 
 
 AegiScan_test/
 │── asenv/                      ------------> will not be visible in git as virtual env will be in the .gitignore (here for reference only)
+│── docker_file/
+│   ├── Dockerfile
+│   ├── DockerCommands.txt
+│   ├── demo_normal.bin
+│   ├── demo_backdoor.bin
+│   ├── demo_high_mem.py
+│   ├── demo_normal_mem.py
 │── src/
 │   ├── detection/
 │   │   ├── buffer_overflow_detection.py
@@ -21,9 +28,14 @@ AegiScan_test/
 │   │   ├── __init__.py
 │   ├── main.py
 │── tests/
-│   ├── test_buffer_overflow.py
-│   ├── test_cache_poisoning.py
-│   ├── test_trapdoor.py
+│   ├── conftest.py
+│   ├── test_buffer_overflow_detection.py
+│   ├── test_buffer_overflow_mitigation.py
+│   ├── test_cache_poisoning_detection.py
+│   ├── test_cache_poisoning_mitigation.py
+│   ├── test_trapdoor_detection.py
+│   ├── test_trapdoor_mitigation.py
+│   ├── test_main.py
 │── pytest.ini
 │── requirements.txt
 │── README.md
