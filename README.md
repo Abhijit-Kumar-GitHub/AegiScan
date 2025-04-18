@@ -55,14 +55,25 @@ flowchart TD
     Start([Start]) --> DetectBuffer[Buffer Overflow Detection]
     DetectBuffer --> KillProcess{Memory > Threshold?}
     KillProcess -- Yes --> Terminate[Kill Process]
-    KillProcess -- No --> DetectCache[Cache Poisoning Detection]
-    DetectCache --> IsPoisoned{Poisoned?}
+    KillProcess -- No --> SkipTerminate[Skip Kill]
+
+    Terminate --> DetectCache
+    SkipTerminate --> DetectCache
+
+    DetectCache[Cache Poisoning Detection] --> IsPoisoned{Poisoned?}
     IsPoisoned -- Yes --> PurgeCache[Purge Cache]
-    IsPoisoned -- No --> AskUserFile[Ask for File Input]
-    AskUserFile --> TrapdoorScan[Trapdoor Detection]
+    IsPoisoned -- No --> SkipPurge[Skip Cache Purge]
+
+    PurgeCache --> AskUserFile
+    SkipPurge --> AskUserFile
+
+    AskUserFile[Ask for File Input] --> TrapdoorScan[Trapdoor Detection]
     TrapdoorScan --> TrapdoorFound{Trapdoor?}
     TrapdoorFound -- Yes --> Quarantine[Quarantine File]
-    TrapdoorFound -- No --> End([End])
+    TrapdoorFound -- No --> SkipQuarantine[Skip Quarantine]
+
+    Quarantine --> End([End])
+    SkipQuarantine --> End
 ```
  ##  Docker Integration
 
