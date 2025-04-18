@@ -1,43 +1,74 @@
 # AegiScan – Security Vulnerability Detection Framework
 
-AegiScan is a modular and adaptive security framework designed to detect, analyze, and mitigate security vulnerabilities in operating systems. It focuses on identifying threats like buffer overflows, trapdoors, and cache poisoning while providing insights and potential mitigation strategies.
+AegiScan is a modular security framework designed to detect and mitigate system-level vulnerabilities in real-time. It focuses on identifying three key threats: **Buffer Overflows**, **Trapdoors**, and **Cache Poisoning**, using Python-based monitoring and mitigation techniques. The framework is lightweight, containerized, and designed with extensibility in mind.
 
-## Key Features
-- Real-time detection of security vulnerabilities
-- Simulated attacks to test system defenses
-- Threat analysis and reporting
-- Automated prevention and mitigation strategies (future scope)
+---
 
-## Development Roadmap
-### Phase 1: Minimum Viable Product (MVP)
-#### Core Functionality: Buffer Overflow Detection
-- **Project Structure**
-  - Backend: Flask/FastAPI
-  - Database: MongoDB/PostgreSQL for storing logs
-  - UI: Streamlit or React.js for real-time alert visualization
-- **Buffer Overflow Detection**
-  - Monitor process memory usage (`psutil` in Python)
-  - Detect anomalies in stack memory allocation
-  - Check logs for segmentation faults
-  - Generate alerts if an overflow is detected
-- **Store & Visualize Logs**
-  - Store security events in the database
-  - Create a basic dashboard to show alerts in real-time
-- **Test on Different OS**
-  - Linux: `/var/log/syslog`
-  - Windows: `win32evtlog`
+##  Features
 
-### Phase 2: Expansion
-- Add detection for **Trapdoors, Cache Poisoning, and Privilege Escalation**
-- Train AI models for anomaly detection
-- Implement real-time notifications
-- Integrate with external security tools
+-  **Buffer Overflow Detection** via memory usage monitoring
+-  **Trapdoor Detection** by scanning binary files for hidden behavior
+-  **Cache Poisoning Detection** with URL poisoning simulations
+-  Built-in mitigation strategies like file quarantine and cache purging
+-  Log-based event tracking for all detections
+-  Modular architecture for easy expansion
 
-## Tech Stack
-- **Backend:** Python (Flask/FastAPI)
-- **Monitoring & Logging:** `psutil`, `subprocess`, `pyinotify`, `win32evtlog`
-- **Database:** MongoDB/PostgreSQL
-- **Frontend:** React.js/Streamlit
-- **Future AI Enhancements:** TensorFlow/PyTorch
+---
 
-AegiScan is designed to evolve, making it a scalable security solution for proactive vulnerability detection and mitigation.
+## 🧩 Module-Wise Breakdown
+
+### 1. `buffer_detector.py`
+Monitors active processes using `psutil` to detect unusually high memory usage (potential buffer overflow). Terminates suspicious processes.
+
+### 2. `trapdoor_detector.py`
+Scans binary files for trapdoors using predefined byte patterns and characteristics. Supports quarantine of affected files.
+
+### 3. `cache_poisoning_detector.py`
+Simulates poisoned cache requests and checks server responses. Flags anomalies and allows cache purging.
+
+### 4. `main.py`
+Coordinates the detection flow: runs buffer checks, asks user input for file scan, and checks for cache poisoning.
+
+### 5. `utils.py`
+Logs all events in a JSON-based structure for future audits or analysis.
+
+---
+
+## 🛠️ Technologies Used
+
+### Programming Language:
+- Python 3.13
+
+### Libraries & Tools:
+- `psutil`, `hashlib`, `os`, `datetime`, `json`, `requests`
+
+### Other Tools:
+- GitHub (Version Control)
+- Docker (Containerization)
+
+---
+
+## 📊 Flow Diagram
+
+```mermaid
+flowchart TD
+    Start([Start]) --> DetectBuffer[Buffer Overflow Detection]
+    DetectBuffer --> KillProcess{Memory > Threshold?}
+    KillProcess -- Yes --> Terminate[Kill Process]
+    KillProcess -- No --> DetectCache[Cache Poisoning Detection]
+    DetectCache --> IsPoisoned{Poisoned?}
+    IsPoisoned -- Yes --> PurgeCache[Purge Cache]
+    IsPoisoned -- No --> AskUserFile[Ask for File Input]
+    AskUserFile --> TrapdoorScan[Trapdoor Detection]
+    TrapdoorScan --> TrapdoorFound{Trapdoor?}
+    TrapdoorFound -- Yes --> Quarantine[Quarantine File]
+    TrapdoorFound -- No --> End([End])
+```
+ ##  Docker Integration
+
+    AegiScan is Docker-ready and can be tested in a containerized environment. This ensures portability and isolation across systems.
+    Dockerfile Highlights:
+      Uses python:3.13-slim base image
+      Runs app as a non-root user
+      Logs and binaries are mounted inside container
+      Drops Linux capabilities at runtime for security
