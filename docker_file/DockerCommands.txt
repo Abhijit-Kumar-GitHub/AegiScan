@@ -1,0 +1,20 @@
+#Building Image (From your project root  run:)
+docker build -f AegiScan/docker_file/Dockerfile -t aegiscan-demo .
+
+
+ docker run -it --rm `
+   --cap-drop ALL `
+   --memory=256m --memory-swap=256m `
+   -v "${PWD}/AegiScan/docker_file/demo_high_mem.py:/app/demo_high_mem.py:ro" `
+   -v "${PWD}/AegiScan/docker_file/demo_normal_mem.py:/app/demo_normal_mem.py:ro" `
+   -v "${PWD}/AegiScan/docker_file/demo_backdoor.bin:/app/demo_sus.bin:rw" `
+   -v "${PWD}/AegiScan/docker_file/demo_normal.bin:/app/demo.bin:ro" `
+   -v "${PWD}/AegiScan/logs:/app/logs:rw" `
+   -v "${PWD}/AegiScan/quarantine:/app/quarantine:rw" `
+   aegiscan-demo bash -c `
+     "python3 /app/demo_normal_mem.py & python3 /app/demo_high_mem.py & `
+      sleep 10 && `
+      echo '/app/demo_sus.bin /app/demo.bin' | python3 -m src.main"
+
+
+/app/demo_sus.bin /app/demo.bin

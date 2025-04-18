@@ -1,36 +1,72 @@
-2025-04-09 20:59:02,801 - WARNING - Process vulnerable_app (PID: 123) using 85.00% memory, exceeding threshold of 80.0%.
-2025-04-09 20:59:02,804 - DEBUG - Inserted log entry: {'timestamp': '2025-04-09T20:59:02.802763', 'process_name': 'vulnerable_app', 'pid': 123, 'memory_usage': 85.0, 'vulnerability': 'Potential Buffer Overflow'}
-2025-04-09 20:59:02,811 - INFO - Process 9999 terminated successfully as a mitigation action.
-2025-04-09 20:59:02,815 - ERROR - Process 9999 not found for termination.
-2025-04-09 20:59:02,817 - WARNING - Cache poisoning detected for https://example.com.
-2025-04-09 20:59:02,821 - INFO - No cached response for https://no-cache.com.
-2025-04-09 20:59:02,824 - INFO - Cache entry for https://example.com purged.
-2025-04-09 20:59:02,826 - WARNING - No cache entry found for https://not-in-cache.com.
-2025-04-09 20:59:02,828 - INFO - Starting buffer overflow detection...
-2025-04-09 20:59:02,829 - WARNING - Process test_proc (PID: 1234) using 85.00% memory, exceeding threshold of 80.0%.
-2025-04-09 20:59:02,829 - INFO - Buffer overflow mitigation result: {'status': 'success', 'message': 'Process terminated'}
-2025-04-09 20:59:02,829 - INFO - Starting cache poisoning detection...
-2025-04-09 20:59:03,720 - WARNING - Cache poisoning detected for https://example.com.
-2025-04-09 20:59:03,721 - INFO - Cache entry for https://example.com purged.
-2025-04-09 20:59:03,721 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
-2025-04-09 20:59:03,721 - INFO - Starting trapdoor detection...
-2025-04-09 20:59:03,743 - ERROR - Error scanning file suspected_binary.exe: Command '['strings', 'suspected_binary.exe']' returned non-zero exit status 1.
-2025-04-09 20:59:03,746 - INFO - Starting buffer overflow detection...
-2025-04-09 20:59:05,601 - INFO - Starting cache poisoning detection...
-2025-04-09 20:59:05,601 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
-2025-04-09 20:59:05,601 - INFO - Starting trapdoor detection...
-2025-04-09 20:59:05,618 - ERROR - Error scanning file suspected_binary.exe: Command '['strings', 'suspected_binary.exe']' returned non-zero exit status 1.
-2025-04-09 20:59:05,621 - INFO - Starting buffer overflow detection...
-2025-04-09 20:59:06,453 - INFO - Starting cache poisoning detection...
-2025-04-09 20:59:07,309 - WARNING - Cache poisoning detected for https://example.com.
-2025-04-09 20:59:07,309 - INFO - Cache entry for https://example.com purged.
-2025-04-09 20:59:07,309 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
-2025-04-09 20:59:07,309 - INFO - Starting trapdoor detection...
-2025-04-09 20:59:07,310 - INFO - Trapdoor mitigation result: File quarantined.
-2025-04-09 20:59:07,312 - WARNING - Potential trapdoor detected in dummy.exe: keyword 'backdoor' found.
-2025-04-09 20:59:07,315 - INFO - No trapdoor detected in dummy.exe.
-2025-04-09 20:59:07,317 - ERROR - Error scanning file missing.exe: Command 'strings' returned non-zero exit status 1.
-2025-04-09 20:59:07,347 - WARNING - Potential trapdoor detected in C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-11\test_trapdoor_detection_real_f0\suspicious.txt: keyword 'backdoor' found.
-2025-04-09 20:59:07,374 - INFO - No trapdoor detected in C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-11\test_no_trapdoor_detection_rea0\clean.txt.
-2025-04-09 20:59:07,379 - INFO - File C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-11\test_quarantine_existing_file0\dangerous.exe moved to quarantine.
-2025-04-09 20:59:07,385 - ERROR - File C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-11\test_quarantine_nonexistent_fi0\fake.exe does not exist.
+2025-04-18 20:35:11,637 - WARNING - Process vulnerable_app (PID: 123) using 85.00% memory, exceeding threshold of 80.0%.
+2025-04-18 20:35:11,640 - DEBUG - Inserted log entry: {'timestamp': '2025-04-18T20:35:11.639274', 'process_name': 'vulnerable_app', 'pid': 123, 'memory_usage': 85.0, 'vulnerability': 'Potential Buffer Overflow'}
+2025-04-18 20:35:11,647 - INFO - Process 9999 terminated successfully as a mitigation action.
+2025-04-18 20:35:11,650 - ERROR - Process 9999 not found for termination.
+2025-04-18 20:35:11,652 - WARNING - Cache poisoning detected for https://example.com.
+2025-04-18 20:35:11,657 - INFO - No cached response for https://no-cache.com.
+2025-04-18 20:35:11,660 - INFO - Cache entry for https://example.com purged.
+2025-04-18 20:35:11,662 - WARNING - No cache entry found for https://not-in-cache.com.
+2025-04-18 20:35:11,665 - INFO - Starting buffer overflow detection...
+2025-04-18 20:35:11,666 - WARNING - Process test_proc (PID: 1234) using 85.00% memory, exceeding threshold of 60.0%.
+2025-04-18 20:35:11,666 - INFO - Buffer overflow mitigation result: {'status': 'success', 'message': 'Process terminated'}
+2025-04-18 20:35:11,666 - INFO - Starting cache poisoning detection...
+2025-04-18 20:35:12,556 - WARNING - Cache poisoning detected for https://example.com.
+2025-04-18 20:35:12,556 - INFO - Cache entry for https://example.com purged.
+2025-04-18 20:35:12,556 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
+2025-04-18 20:35:12,564 - INFO - Starting trapdoor detection...
+2025-04-18 20:35:12,586 - ERROR - Error scanning file suspected_binary.exe: Command '['strings', 'suspected_binary.exe']' returned non-zero exit status 1.
+2025-04-18 20:35:12,589 - INFO - Starting buffer overflow detection...
+2025-04-18 20:35:15,259 - INFO - Starting cache poisoning detection...
+2025-04-18 20:35:15,259 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
+2025-04-18 20:35:15,260 - INFO - Starting trapdoor detection...
+2025-04-18 20:35:15,282 - ERROR - Error scanning file suspected_binary.exe: Command '['strings', 'suspected_binary.exe']' returned non-zero exit status 1.
+2025-04-18 20:35:15,285 - INFO - Starting buffer overflow detection...
+2025-04-18 20:35:16,510 - INFO - Starting cache poisoning detection...
+2025-04-18 20:35:17,461 - WARNING - Cache poisoning detected for https://example.com.
+2025-04-18 20:35:17,461 - INFO - Cache entry for https://example.com purged.
+2025-04-18 20:35:17,461 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
+2025-04-18 20:35:17,461 - INFO - Starting trapdoor detection...
+2025-04-18 20:35:17,462 - INFO - Trapdoor mitigation result: File quarantined.
+2025-04-18 20:35:17,465 - WARNING - Potential trapdoor detected in dummy.exe: keyword 'backdoor' found.
+2025-04-18 20:35:17,467 - INFO - No trapdoor detected in dummy.exe.
+2025-04-18 20:35:17,469 - ERROR - Error scanning file missing.exe: Command 'strings' returned non-zero exit status 1.
+2025-04-18 20:35:17,516 - WARNING - Potential trapdoor detected in C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-21\test_trapdoor_detection_real_f0\suspicious.txt: keyword 'backdoor' found.
+2025-04-18 20:35:17,545 - INFO - No trapdoor detected in C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-21\test_no_trapdoor_detection_rea0\clean.txt.
+2025-04-18 20:35:17,552 - INFO - File C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-21\test_quarantine_existing_file0\dangerous.exe moved to quarantine.
+2025-04-18 20:35:17,558 - ERROR - File C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-21\test_quarantine_nonexistent_fi0\fake.exe does not exist.
+2025-04-18 20:36:27,876 - WARNING - Process vulnerable_app (PID: 123) using 85.00% memory, exceeding threshold of 80.0%.
+2025-04-18 20:36:27,878 - DEBUG - Inserted log entry: {'timestamp': '2025-04-18T20:36:27.878155', 'process_name': 'vulnerable_app', 'pid': 123, 'memory_usage': 85.0, 'vulnerability': 'Potential Buffer Overflow'}
+2025-04-18 20:36:27,885 - INFO - Process 9999 terminated successfully as a mitigation action.
+2025-04-18 20:36:27,887 - ERROR - Process 9999 not found for termination.
+2025-04-18 20:36:27,890 - WARNING - Cache poisoning detected for https://example.com.
+2025-04-18 20:36:27,894 - INFO - No cached response for https://no-cache.com.
+2025-04-18 20:36:27,896 - INFO - Cache entry for https://example.com purged.
+2025-04-18 20:36:27,898 - WARNING - No cache entry found for https://not-in-cache.com.
+2025-04-18 20:36:27,901 - INFO - Starting buffer overflow detection...
+2025-04-18 20:36:27,902 - WARNING - Process test_proc (PID: 1234) using 85.00% memory, exceeding threshold of 60.0%.
+2025-04-18 20:36:27,902 - INFO - Buffer overflow mitigation result: {'status': 'success', 'message': 'Process terminated'}
+2025-04-18 20:36:27,902 - INFO - Starting cache poisoning detection...
+2025-04-18 20:36:28,824 - WARNING - Cache poisoning detected for https://example.com.
+2025-04-18 20:36:28,824 - INFO - Cache entry for https://example.com purged.
+2025-04-18 20:36:28,825 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
+2025-04-18 20:36:28,835 - INFO - Starting trapdoor detection...
+2025-04-18 20:36:28,857 - ERROR - Error scanning file suspected_binary.exe: Command '['strings', 'suspected_binary.exe']' returned non-zero exit status 1.
+2025-04-18 20:36:28,860 - INFO - Starting buffer overflow detection...
+2025-04-18 20:36:31,255 - INFO - Starting cache poisoning detection...
+2025-04-18 20:36:31,255 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
+2025-04-18 20:36:31,256 - INFO - Starting trapdoor detection...
+2025-04-18 20:36:31,274 - ERROR - Error scanning file suspected_binary.exe: Command '['strings', 'suspected_binary.exe']' returned non-zero exit status 1.
+2025-04-18 20:36:31,276 - INFO - Starting buffer overflow detection...
+2025-04-18 20:36:32,467 - INFO - Starting cache poisoning detection...
+2025-04-18 20:36:33,318 - WARNING - Cache poisoning detected for https://example.com.
+2025-04-18 20:36:33,318 - INFO - Cache entry for https://example.com purged.
+2025-04-18 20:36:33,318 - INFO - Cache poisoning mitigation result: Cache entry for https://example.com purged.
+2025-04-18 20:36:33,318 - INFO - Starting trapdoor detection...
+2025-04-18 20:36:33,319 - INFO - Trapdoor mitigation result: File quarantined.
+2025-04-18 20:36:33,322 - WARNING - Potential trapdoor detected in dummy.exe: keyword 'backdoor' found.
+2025-04-18 20:36:33,325 - INFO - No trapdoor detected in dummy.exe.
+2025-04-18 20:36:33,328 - ERROR - Error scanning file missing.exe: Command 'strings' returned non-zero exit status 1.
+2025-04-18 20:36:33,360 - WARNING - Potential trapdoor detected in C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-22\test_trapdoor_detection_real_f0\suspicious.txt: keyword 'backdoor' found.
+2025-04-18 20:36:33,388 - INFO - No trapdoor detected in C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-22\test_no_trapdoor_detection_rea0\clean.txt.
+2025-04-18 20:36:33,395 - INFO - File C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-22\test_quarantine_existing_file0\dangerous.exe moved to quarantine.
+2025-04-18 20:36:33,401 - ERROR - File C:\Users\ASUS\AppData\Local\Temp\pytest-of-ASUS\pytest-22\test_quarantine_nonexistent_fi0\fake.exe does not exist.

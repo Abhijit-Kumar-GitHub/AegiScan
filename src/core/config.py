@@ -4,7 +4,7 @@ Purpose: Store configuration constants for AegiScan.
 """
 
 # Buffer overflow detection threshold (in percentage)
-BUFFER_OVERFLOW_THRESHOLD = 80.0
+BUFFER_OVERFLOW_THRESHOLD = 60.0
 
 # Log file configurations
 LOG_FILE = "logs/aegiscan.log"
