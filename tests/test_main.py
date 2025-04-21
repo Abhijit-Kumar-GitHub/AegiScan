@@ -1,4 +1,4 @@
-# tests/test_main.py
+# AegiScan\tests\test_main.py
 
 import pytest
 from unittest.mock import patch, MagicMock

@@ -1,3 +1,5 @@
+# AegiScan\src\mitigation\trapdoor_mitigation.py
+
 """
 Module: trapdoor_mitigation
 Purpose: Mitigate detected trapdoors by quarantining suspicious files.

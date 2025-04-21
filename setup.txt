@@ -1,3 +1,5 @@
+AegiScan/setup.txt
+
 this is how we envision our project to look like, subject to change in future
 
 

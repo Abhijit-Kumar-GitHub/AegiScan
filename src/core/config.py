@@ -1,3 +1,4 @@
+# /AegiScan/src/core/config.py
 """
 Module: config
 Purpose: Store configuration constants for AegiScan.

@@ -1,3 +1,4 @@
+# /AegiScan/src/detection/buffer_overflow_detection.py
 """
 Module: buffer_overflow_detection
 Purpose: Monitor process memory usage to detect potential buffer overflow vulnerabilities.

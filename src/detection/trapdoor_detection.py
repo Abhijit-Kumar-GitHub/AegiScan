@@ -1,3 +1,4 @@
+# AegiScan/src/detection/trapdoor_detection.py
 """
 Module: trapdoor_detection
 Purpose: Detect potential trapdoors/backdoors in binaries by scanning for suspicious strings.
