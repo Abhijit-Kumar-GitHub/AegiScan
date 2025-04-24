@@ -15,7 +15,7 @@ AegiScan is a modular security framework designed to detect and mitigate system-
 
 ---
 
-## 🧩 Module-Wise Breakdown
+##  Module-Wise Breakdown
 
 ### 1. `buffer_detector.py`
 Monitors active processes using `psutil` to detect unusually high memory usage (potential buffer overflow). Terminates suspicious processes.
@@ -34,7 +34,7 @@ Logs all events in a JSON-based structure for future audits or analysis.
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 ### Programming Language:
 - Python 3.13
@@ -48,7 +48,7 @@ Logs all events in a JSON-based structure for future audits or analysis.
 
 ---
 
-## 📊 Flow Diagram
+##  Flow Diagram
 
 ```mermaid
 flowchart TD
