@@ -1,3 +1,4 @@
+# /AegiScan/src/main.py
 """
 Main entry point for the AegiScan Security Vulnerability Detection Framework.
 Combines detection and mitigation modules.

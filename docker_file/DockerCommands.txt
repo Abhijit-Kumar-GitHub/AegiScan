@@ -1,3 +1,5 @@
+#AegiScan\docker_file\DockerCommands.txt
+
 #Building Image (From your project root  run:)
 docker build -f AegiScan/docker_file/Dockerfile -t aegiscan-demo .
 

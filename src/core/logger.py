@@ -1,3 +1,4 @@
+# /AegiScan/src/core/logger.py
 """
 Module: logger
 Purpose: Set up a centralized logging configuration for the AegiScan project.

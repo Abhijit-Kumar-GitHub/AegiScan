@@ -1,3 +1,4 @@
+-AegiScan/README.md
 # AegiScan – Security Vulnerability Detection Framework
 
 AegiScan is a modular security framework designed to detect and mitigate system-level vulnerabilities in real-time. It focuses on identifying three key threats: **Buffer Overflows**, **Trapdoors**, and **Cache Poisoning**, using Python-based monitoring and mitigation techniques. The framework is lightweight, containerized, and designed with extensibility in mind.
